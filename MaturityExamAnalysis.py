@@ -186,6 +186,10 @@ class MaturityExamAnalysis:
 
     # Zadanie 5
     def zad_5(self, territory_1, territory_2, gender_param="both"):
+        if gender_param not in ["both", "mężczyzna", "kobieta"]:
+            print("Function wasn't called properly, the gender argument must be set to either 'mężczyzna', "
+                  "'kobieta' or ''.")
+            return
         pass_rate, unique_year, unique_territory = self.get_pass_rate(territory_1, territory_2,
                                                                       gender_param=gender_param)
         array_index = 0
@@ -216,7 +220,10 @@ if __name__ == "__main__":
                          "zad_3": mat.zad_3,
                          "zad_4": mat.zad_4,
                          "zad_5": mat.zad_5}
+        try:
+            function_dict[sys.argv[1]](*sys.argv[2:])
+        except TypeError:
+            print("Function wasn't called properly. Check the arguments you passed.")
 
-        function_dict[sys.argv[1]](*sys.argv[2:])
     else:
         print("Please pass some arguments.")
