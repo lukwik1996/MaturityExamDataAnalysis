@@ -4,7 +4,6 @@
     <list default="true" id="62e3491d-128e-4eb3-8aed-916c4730f88e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MaturityExamAnalysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaturityExamAnalysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MaturityExamAnalysisTests.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaturityExamAnalysisTests.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +19,7 @@
     <session id="-1316875020">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
@@ -43,12 +42,12 @@
         <counts>
           <entry key="Python Console" value="6" />
           <entry key="py" value="6833" />
-          <entry key="txt" value="64" />
+          <entry key="txt" value="105" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="64" />
+          <entry key="PLAIN_TEXT" value="105" />
           <entry key="Python" value="6839" />
         </counts>
       </usages-collector>
@@ -245,19 +244,25 @@
       <option name="project" value="LOCAL" />
       <updated>1558640567815</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Working script with a few tests added.">
+      <created>1558657583808</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1558657583808</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49819493" visible="true" weight="0.26385927" />
       <window_info id="Structure" order="1" sideWeight="0.50180507" side_tool="true" weight="0.25586355" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49520257" visible="true" weight="0.18004338" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49520257" weight="0.18004338" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49733475" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -284,7 +289,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Almost completed, no tests yet." />
     <MESSAGE value="Almost completed, empty test script." />
-    <option name="LAST_COMMIT_MESSAGE" value="Almost completed, empty test script." />
+    <MESSAGE value="Working script with a few tests added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Working script with a few tests added." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
