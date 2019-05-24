@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62e3491d-128e-4eb3-8aed-916c4730f88e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MaturityExamAnalysisTests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaturityExamAnalysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaturityExamAnalysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MaturityExamAnalysisTests.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaturityExamAnalysisTests.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,43 +13,43 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/MaturalExamDataAnalysis$MaturityExamAnalysis.coverage" NAME="MaturityExamAnalysis Coverage Results" MODIFIED="1558640075978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MaturalExamDataAnalysis$MaturityExamAnalysisTests.coverage" NAME="MaturityExamAnalysisTests Coverage Results" MODIFIED="1558640465038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MaturalExamDataAnalysis$MaturityExamAnalysis.coverage" NAME="MaturityExamAnalysis Coverage Results" MODIFIED="1558654243840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MaturalExamDataAnalysis$MaturityExamAnalysisTests.coverage" NAME="MaturityExamAnalysisTests Coverage Results" MODIFIED="1558657547981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1316875020">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="4" />
+          <entry key="py" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="4" />
+          <entry key="Python" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="6" />
-          <entry key="py" value="5513" />
-          <entry key="txt" value="33" />
+          <entry key="py" value="6833" />
+          <entry key="txt" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="33" />
-          <entry key="Python" value="5519" />
+          <entry key="PLAIN_TEXT" value="64" />
+          <entry key="Python" value="6839" />
         </counts>
       </usages-collector>
     </session>
@@ -58,18 +59,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MaturityExamAnalysis.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+            <state relative-caret-position="-1054">
+              <caret line="28" column="34" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="34" />
               <folding>
-                <element signature="e#0#34#0" expanded="true" />
-                <element signature="e#276#573#0" />
-                <element signature="e#629#1167#0" />
-                <element signature="e#1732#2555#0" />
-                <marker date="1558639653249" expanded="true" signature="75:76" ph="..." />
-                <marker date="1558639653249" expanded="true" signature="1192:1197" ph="..." />
-                <marker date="1558639653249" expanded="true" signature="1722:4565" ph="..." />
-                <marker date="1558639653249" expanded="true" signature="3114:4565" ph="..." />
-                <marker date="1558639653249" expanded="true" signature="8770:9210" ph="..." />
+                <element signature="e#0#10#0" expanded="true" />
+                <marker date="1558655514630" expanded="true" signature="75:76" ph="..." />
+                <marker date="1558655514630" expanded="true" signature="1528:1533" ph="..." />
+                <marker date="1558655514630" expanded="true" signature="2058:5248" ph="..." />
+                <marker date="1558655514630" expanded="true" signature="3450:5248" ph="..." />
+                <marker date="1558655514630" expanded="true" signature="9453:9893" ph="..." />
               </folding>
             </state>
           </provider>
@@ -78,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MaturityExamAnalysisTests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="27" selection-start-column="27" selection-end-column="27" />
+            <state relative-caret-position="589">
+              <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -126,6 +124,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -137,7 +136,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -174,7 +172,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MaturityExamAnalysis.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="zad_4" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -240,20 +238,27 @@
       <option name="project" value="LOCAL" />
       <updated>1558639423803</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Almost completed, empty test script.">
+      <created>1558640567815</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1558640567815</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49819493" visible="true" weight="0.26119402" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49819493" visible="true" weight="0.26385927" />
       <window_info id="Structure" order="1" sideWeight="0.50180507" side_tool="true" weight="0.25586355" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49626866" visible="true" weight="0.18004338" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49840087" weight="0.3991323" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49520257" visible="true" weight="0.18004338" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49733475" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -262,7 +267,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.49946696" weight="0.329718" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.50373137" side_tool="true" visible="true" weight="0.18004338" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.50479746" side_tool="true" visible="true" weight="0.18004338" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -278,7 +283,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Almost completed, no tests yet." />
-    <option name="LAST_COMMIT_MESSAGE" value="Almost completed, no tests yet." />
+    <MESSAGE value="Almost completed, empty test script." />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost completed, empty test script." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
@@ -288,28 +294,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MaturityExamAnalysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="10" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+        <state relative-caret-position="-1054">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="34" />
           <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <element signature="e#276#573#0" />
-            <element signature="e#629#1167#0" />
-            <element signature="e#1732#2555#0" />
-            <marker date="1558639653249" expanded="true" signature="75:76" ph="..." />
-            <marker date="1558639653249" expanded="true" signature="1192:1197" ph="..." />
-            <marker date="1558639653249" expanded="true" signature="1722:4565" ph="..." />
-            <marker date="1558639653249" expanded="true" signature="3114:4565" ph="..." />
-            <marker date="1558639653249" expanded="true" signature="8770:9210" ph="..." />
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1558655514630" expanded="true" signature="75:76" ph="..." />
+            <marker date="1558655514630" expanded="true" signature="1528:1533" ph="..." />
+            <marker date="1558655514630" expanded="true" signature="2058:5248" ph="..." />
+            <marker date="1558655514630" expanded="true" signature="3450:5248" ph="..." />
+            <marker date="1558655514630" expanded="true" signature="9453:9893" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MaturityExamAnalysisTests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
+        <state relative-caret-position="589">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
         </state>
       </provider>
     </entry>

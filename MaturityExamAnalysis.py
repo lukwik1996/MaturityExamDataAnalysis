@@ -1,5 +1,5 @@
-from urllib.request import urlopen
 import sys
+from urllib.request import urlopen
 
 
 class MaturityExamAnalysis:
@@ -17,15 +17,23 @@ class MaturityExamAnalysis:
     def clean_string(text):
         text = str(text)
         text = text.replace("\\xb9", "ą")
-        text = text.replace("\\xb3", "ł")
+        text = text.replace("\\xa5", "Ą")
+        text = text.replace("\\xe6", "ć")
+        text = text.replace("\\xc6", "Ć")
         text = text.replace("\\xea", "ę")
-        text = text.replace("\\xbf", "ż")
-        text = text.replace("\\x9f", "ź")
-        text = text.replace("\\x9c", "ś")
-        text = text.replace("\\xf1", "ń")
-        text = text.replace("\\x8c", "Ś")
+        text = text.replace("\\xca", "Ę")
+        text = text.replace("\\xb3", "ł")
         text = text.replace("\\xa3", "Ł")
+        text = text.replace("\\xf1", "ń")
+        text = text.replace("\\xd1", "Ń")
         text = text.replace("\\xf3", "ó")
+        text = text.replace("\\xd3", "Ó")
+        text = text.replace("\\x9c", "ś")
+        text = text.replace("\\x8c", "Ś")
+        text = text.replace("\\x9f", "ź")
+        text = text.replace("\\x8f", "Ź")
+        text = text.replace("\\xbf", "ż")
+        text = text.replace("\\xaf", "Ż")
         text = text.replace("b'", "")
         text = text.replace("\\r\\n\'", "")
         return text
@@ -93,8 +101,16 @@ class MaturityExamAnalysis:
                     else:
                         if self.gender[array_index] == gender_param:
                             number_passed[i] += self.people[array_index]
+
+        rate_of_pass, number_passed, number_attended = \
+            self.count_pass_rate(rate_of_pass, number_passed, number_attended)
+        return rate_of_pass, number_passed, number_attended
+
+    @staticmethod
+    def count_pass_rate(rate_of_pass, number_passed, number_attended):
         for array_index in range(len(rate_of_pass)):
             rate_of_pass[array_index] = 100 * number_passed[array_index] / number_attended[array_index]
+        return rate_of_pass, number_passed, number_attended
 
     def get_pass_rate(self, *parameters, gender_param="both"):
         unique_year = sorted(set(self.year))
