@@ -21,16 +21,14 @@ if __name__ == '__main__':
         assert test_result[i] == correct_result[i], print('Value expected: ' + str(correct_result[i]) +
                                                           ', value returned: ' + str(test_result[i]))
 
-    """
-    TO FIX - BRAK NIEKTORYCH POLSKICH ZNAKOW
-    
-    test_string = "\x8cl\xb9sk to pi\xeakne wojew\xf3dztwo.\r\n"
-    test_string = test_string.encode(encoding="ANSI", errors='ignore')
-    test_string_fixed = "Śląsk to piękne województwo."
-    tst = MaturityExamAnalysis.MaturityExamAnalysis.clean_string(test_string)
-    print(tst)
-    assert MaturityExamAnalysis.MaturityExamAnalysis.clean_string(test_string) == test_string_fixed, print(test_string)
-    """
+    mea = MaturityExamAnalysis.MaturityExamAnalysis(
+        "https://drive.google.com/uc?export=download&id=1zvkIlxZ6GJNEB3rPvu_I2GDV_OsTZGNJ")
+
+    assert mea.territory[0] == "Gdańsk", print("Territory[0] = " + mea.territory[0])
+    assert mea.status[0] == "przystąpiło", print("Status[0] = " + mea.status[0])
+    assert mea.gender[0] == "mężczyźni", print("Gender[0] = " + mea.gender[0])
+    assert mea.year[0] == 2018, print("Year[0] = " + str(mea.year[0]))
+    assert mea.people[0] == 10000, print("People[0] = " + str(mea.people[0]))
 
     array_1, array_2, array_3 = MaturityExamAnalysis.MaturityExamAnalysis.fill_arrays_with_0(10)
     assert len(array_1) == 10 and len(array_2) == 10 and len(array_3) == 10

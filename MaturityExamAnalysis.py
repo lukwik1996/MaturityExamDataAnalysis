@@ -1,3 +1,4 @@
+import re
 import sys
 from urllib.request import urlopen
 
@@ -14,28 +15,47 @@ class MaturityExamAnalysis:
         self.get_data()
 
     @staticmethod
-    def clean_string(text):
+    def clean_string(text):             # get rid of ANSI/UTF-8 diacritics
         text = str(text)
-        text = text.replace("\\xb9", "ą")
+        text = text.replace("\\xc4\\x84", "Ą")
         text = text.replace("\\xa5", "Ą")
-        text = text.replace("\\xe6", "ć")
+        text = text.replace("\\xc4\\x85", "ą")
+        text = text.replace("\\xb9", "ą")
+        text = text.replace("\\xc4\\x86", "Ć")
         text = text.replace("\\xc6", "Ć")
-        text = text.replace("\\xea", "ę")
+        text = text.replace("\\xc4\\x87", "ć")
+        text = text.replace("\\xe6", "ć")
+        text = text.replace("\\xc4\\x98", "Ę")
         text = text.replace("\\xca", "Ę")
-        text = text.replace("\\xb3", "ł")
+        text = text.replace("\\xc4\\x99", "ę")
+        text = text.replace("\\xea", "ę")
+        text = text.replace("\\xc5\\x81", "Ł")
         text = text.replace("\\xa3", "Ł")
-        text = text.replace("\\xf1", "ń")
+        text = text.replace("\\xc5\\x82", "ł")
+        text = text.replace("\\xb3", "ł")
+        text = text.replace("\\xc5\\x83", "Ń")
         text = text.replace("\\xd1", "Ń")
-        text = text.replace("\\xf3", "ó")
+        text = text.replace("\\xc5\\x84", "ń")
+        text = text.replace("\\xf1", "ń")
+        text = text.replace("\\xc3\\x93", "Ó")
         text = text.replace("\\xd3", "Ó")
-        text = text.replace("\\x9c", "ś")
+        text = text.replace("\\xc3\\xb3", "ó")
+        text = text.replace("\\xf3", "ó")
+        text = text.replace("\\xc5\\x9a", "Ś")
         text = text.replace("\\x8c", "Ś")
-        text = text.replace("\\x9f", "ź")
+        text = text.replace("\\xc5\\x9b", "ś")
+        text = text.replace("\\x9c", "ś")
+        text = text.replace("\\xc5\\xb9", "Ź")
         text = text.replace("\\x8f", "Ź")
-        text = text.replace("\\xbf", "ż")
+        text = text.replace("\\xc5\\xba", "ź")
+        text = text.replace("\\x9f", "ź")
+        text = text.replace("\\xc5\\xbb", "Ż")
         text = text.replace("\\xaf", "Ż")
+        text = text.replace("\\xc5\\xbc", "ż")
+        text = text.replace("\\xbf", "ż")
         text = text.replace("b'", "")
-        text = text.replace("\\r\\n\'", "")
+        text = text.replace("\\r\\n", "")
+        text = re.sub("\'$", "", text)
         return text
 
     def get_data(self):
@@ -162,50 +182,68 @@ class MaturityExamAnalysis:
             return pass_rate, unique_year
 
     # Zadanie 1
-    def zad_1(self, year_param, gender_param="both"):
-        res = self.get_number_of_people(year_param=year_param, gender_param=gender_param)
-        for item in res:
-            print(item)
+    def average_number_of_people_per_voivodeship(self, year_param, gender_param="both"):
+        result = []
+        if gender_param not in ["both", "mężczyźni", "kobiety"]:
+            print("Function wasn't called properly, the gender argument must be set to either 'mężczyzna', "
+                  "'kobieta' or ''.")
+            return result
+        result.append(self.get_number_of_people(year_param=year_param, gender_param=gender_param))
+        return result
 
     # Zadanie 2
-    def zad_2(self, territory_param, gender_param="both"):
+    def pass_rate_over_years(self, territory_param, gender_param="both"):
+        result = []
+        if gender_param not in ["both", "mężczyźni", "kobiety"]:
+            print("Function wasn't called properly, the gender argument must be set to either 'mężczyzna', "
+                  "'kobieta' or ''.")
+            return result
         pass_rate, unique_year = self.get_pass_rate(territory_param, gender_param=gender_param)
         for array_index in range(len(unique_year)):
-            print(str(unique_year[array_index]) + " - " + str(round(pass_rate[array_index])))
+            result.append(str(unique_year[array_index]) + " - " + str(round(pass_rate[array_index])))
+        return result
 
     # Zadanie 3
-    def zad_3(self, year_param, gender_param="both"):
+    def best_pass_rate(self, year_param, gender_param="both"):
+        result = []
+        if gender_param not in ["both", "mężczyźni", "kobiety"]:
+            print("Function wasn't called properly, the gender argument must be set to either 'mężczyzna', "
+                  "'kobieta' or ''.")
+            return result
         pass_rate, unique_year, unique_territory = self.get_pass_rate(year_param, gender_param=gender_param)
         max_pass_rate = 0
         max_pass_rate_index = 0
-
         for i in range(len(pass_rate)):
             if pass_rate[i] > max_pass_rate:
                 max_pass_rate = pass_rate[i]
                 max_pass_rate_index = i
-
-        print(str(year_param) + " - " + unique_territory[max_pass_rate_index])
+        result.append(str(year_param) + " - " + unique_territory[max_pass_rate_index])
+        return result
 
     # Zadanie 4
-    def zad_4(self, gender_param="both"):
+    def regression(self, gender_param="both"):
+        result = []
+        if gender_param not in ["both", "mężczyźni", "kobiety"]:
+            print("Function wasn't called properly, the gender argument must be set to either 'mężczyzna', "
+                  "'kobieta' or ''.")
+            return result
         pass_rate, unique_territory, unique_year, number_of_territories = self.get_pass_rate(gender_param=gender_param)
-        results = []
         for array_index in range(len(pass_rate) - number_of_territories):
             if pass_rate[array_index] > pass_rate[array_index + number_of_territories] and \
                     unique_territory[array_index % number_of_territories] != "Polska":
-                results.append(unique_territory[array_index % number_of_territories] + ": " +
-                               str(unique_year[array_index // number_of_territories]) + " -> " +
-                               str(unique_year[(array_index + number_of_territories) // number_of_territories]))
-        results.sort()
-        for result in results:
-            print(result)
+                result.append(unique_territory[array_index % number_of_territories] + ": " +
+                              str(unique_year[array_index // number_of_territories]) + " -> " +
+                              str(unique_year[(array_index + number_of_territories) // number_of_territories]))
+        result.sort()
+        return result
 
     # Zadanie 5
-    def zad_5(self, territory_1, territory_2, gender_param="both"):
-        if gender_param not in ["both", "mężczyzna", "kobieta"]:
+    def compare_voivodeships(self, territory_1, territory_2, gender_param="both"):
+        result = []
+        if gender_param not in ["both", "mężczyźni", "kobiety"]:
             print("Function wasn't called properly, the gender argument must be set to either 'mężczyzna', "
                   "'kobieta' or ''.")
-            return
+            return result
         pass_rate, unique_year, unique_territory = self.get_pass_rate(territory_1, territory_2,
                                                                       gender_param=gender_param)
         array_index = 0
@@ -216,8 +254,9 @@ class MaturityExamAnalysis:
                 better = territory_set[0]
             else:
                 better = territory_set[1]
-            print(str(unique_year[array_index // 2]) + " - " + better)
+            result.append(str(unique_year[array_index // 2]) + " - " + better)
             array_index += 2
+        return result
 
 
 if __name__ == "__main__":
@@ -228,18 +267,30 @@ if __name__ == "__main__":
             if sys.argv[index + 2].isdigit():
                 sys.argv[index + 2] = int(sys.argv[index + 2])
 
+        if sys.argv[-1] == 'male':
+            sys.argv[-1] = 'mężczyźni'
+        elif sys.argv[-1] == 'female':
+            sys.argv[-1] = 'kobiety'
+
         mat = MaturityExamAnalysis("https://www.dane.gov.pl/media/resources/20190513/Liczba_os%C3%B3b_kt%C3%B3re"
                                    "_przystapi%C5%82y_lub_zda%C5%82y_egzamin_maturalny.csv")
 
-        function_dict = {"zad_1": mat.zad_1,
-                         "zad_2": mat.zad_2,
-                         "zad_3": mat.zad_3,
-                         "zad_4": mat.zad_4,
-                         "zad_5": mat.zad_5}
+        function_dict = {"AverageAttendants": mat.average_number_of_people_per_voivodeship,
+                         "PassRateOverYears": mat.pass_rate_over_years,
+                         "TopVoivodeship": mat.best_pass_rate,
+                         "Regression": mat.regression,
+                         "CompareTwo": mat.compare_voivodeships,
+                         "ŚredniaLiczbaOsób": mat.average_number_of_people_per_voivodeship,
+                         "Zdawalność": mat.pass_rate_over_years,
+                         "NajlepszeWojewództwo": mat.best_pass_rate,
+                         "Regresja": mat.regression,
+                         "PorównajDwa": mat.compare_voivodeships
+                         }
         try:
-            function_dict[sys.argv[1]](*sys.argv[2:])
+            result_array = function_dict[sys.argv[1]](*sys.argv[2:])
+            for res in result_array:
+                print(res)
         except TypeError:
             print("Function wasn't called properly. Check the arguments you passed.")
-
     else:
         print("Please pass some arguments.")
