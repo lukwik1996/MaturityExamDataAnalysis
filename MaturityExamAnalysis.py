@@ -13,10 +13,12 @@ class MaturityExamAnalysis:
         self.gender = []            # gender
         self.year = []              # year
         self.people = []            # number of people
-        self.get_data()
+        self.get_data()             # fills above arrays with data from csv file
 
+    # get rid of ANSI/UTF-8 diacritics
+    # unidecode module could be used here
     @staticmethod
-    def clean_string(text):             # get rid of ANSI/UTF-8 diacritics
+    def clean_string(text):
         text = str(text)
         text = text.replace("\\xc4\\x84", "Ą")
         text = text.replace("\\xa5", "Ą")
@@ -72,7 +74,7 @@ class MaturityExamAnalysis:
             self.year.append(int(year_temp))
             self.people.append(int(people_temp))
 
-    def get_number_of_people(self, year_param, gender_param):
+    def get_number_of_people(self, year_param, gender_param):                               # Task 1
         people_count = 0
         average_people_per_voivodeship = []
         for array_index, item in enumerate(self.year):
@@ -101,6 +103,7 @@ class MaturityExamAnalysis:
             pass_rate.append(0)
         return attend_count, pass_count, pass_rate
 
+    # fills the number of attendants, people who passed, and pass rates for every needed row
     def fill_arrays_with_data(self, length_of_array, territories_number, years_number, unique_year_set,
                               unique_territory_set, number_attended, number_passed, rate_of_pass, gender_param="both"):
         for array_index in range(length_of_array):
@@ -125,12 +128,12 @@ class MaturityExamAnalysis:
                         if self.gender[array_index] == gender_param:
                             number_passed[i] += self.people[array_index]
 
-        rate_of_pass, number_passed, number_attended = \
-            self.count_pass_rate(rate_of_pass, number_passed, number_attended)
+        rate_of_pass = self.calculate_pass_rate(rate_of_pass, number_passed, number_attended)
         return rate_of_pass, number_passed, number_attended
 
+    # calculated the pass rate
     @staticmethod
-    def count_pass_rate(rate_of_pass, number_passed, number_attended):
+    def calculate_pass_rate(rate_of_pass, number_passed, number_attended):
         for array_index in range(len(rate_of_pass)):
             rate_of_pass[array_index] = 100 * number_passed[array_index] / number_attended[array_index]
         return rate_of_pass, number_passed, number_attended
@@ -141,7 +144,7 @@ class MaturityExamAnalysis:
         if "Polska" in unique_territory:
             unique_territory.remove("Polska")
 
-        if not parameters:                                                                  # zad 4
+        if not parameters:                                                                  # Task 4
             array_length = len(unique_territory) * len(unique_year)
             attend_count, pass_count, pass_rate = self.fill_arrays_with_0(param_array_length=array_length)
             number_of_territories = len(unique_territory)
@@ -152,7 +155,7 @@ class MaturityExamAnalysis:
                                        number_passed=pass_count, rate_of_pass=pass_rate, gender_param=gender_param)
             return pass_rate, unique_territory, unique_year, number_of_territories
 
-        elif any(isinstance(par, int) for par in parameters):                               # zad 3
+        elif any(isinstance(par, int) for par in parameters):                               # Task 3
             array_length = len(unique_territory)
             attend_count, pass_count, pass_rate = self.fill_arrays_with_0(param_array_length=array_length)
             number_of_territories = len(unique_territory)
@@ -163,7 +166,7 @@ class MaturityExamAnalysis:
                                        number_passed=pass_count, rate_of_pass=pass_rate, gender_param=gender_param)
             return pass_rate, unique_year, unique_territory
 
-        elif any(isinstance(par, str) for par in parameters) and len(parameters) >= 2:      # zad 5
+        elif any(isinstance(par, str) for par in parameters) and len(parameters) >= 2:      # Task 5
             array_length = 2 * len(unique_year)
             attend_count, pass_count, pass_rate = self.fill_arrays_with_0(param_array_length=array_length)
             number_of_territories = len(parameters)
@@ -174,7 +177,7 @@ class MaturityExamAnalysis:
                                        number_passed=pass_count, rate_of_pass=pass_rate, gender_param=gender_param)
             return pass_rate, unique_year, unique_territory
 
-        else:                                                                               # zad 2
+        else:                                                                               # Task 2
             array_length = len(unique_year)
             attend_count, pass_count, pass_rate = self.fill_arrays_with_0(param_array_length=array_length)
             number_of_territories = 1
@@ -185,7 +188,7 @@ class MaturityExamAnalysis:
                                        number_passed=pass_count, rate_of_pass=pass_rate, gender_param=gender_param)
             return pass_rate, unique_year
 
-    # Zadanie 1
+    # Task 1
     def average_number_of_people_per_voivodeship(self, year_param, gender_param="both"):
         result = []
         if gender_param not in self.gender_params:
@@ -195,7 +198,7 @@ class MaturityExamAnalysis:
         result.append(self.get_number_of_people(year_param=year_param, gender_param=gender_param))
         return result[0]
 
-    # Zadanie 2
+    # Task 2
     def pass_rate_over_years(self, territory_param, gender_param="both"):
         result = []
         if gender_param not in self.gender_params:
@@ -207,7 +210,7 @@ class MaturityExamAnalysis:
             result.append(str(unique_year[array_index]) + " - " + str(round(pass_rate[array_index])) + "%")
         return result
 
-    # Zadanie 3
+    # Task 3
     def best_pass_rate(self, year_param, gender_param="both"):
         result = []
         if gender_param not in self.gender_params:
@@ -224,7 +227,7 @@ class MaturityExamAnalysis:
         result.append(str(year_param) + " - " + unique_territory[max_pass_rate_index])
         return result
 
-    # Zadanie 4
+    # Task 4
     def regression(self, gender_param="both"):
         result = []
         if gender_param not in self.gender_params:
@@ -241,7 +244,7 @@ class MaturityExamAnalysis:
         result.sort()
         return result
 
-    # Zadanie 5
+    # Task 5
     def compare_voivodeships(self, territory_1, territory_2, gender_param="both"):
         result = []
         if gender_param not in self.gender_params:
@@ -252,7 +255,6 @@ class MaturityExamAnalysis:
                                                                       gender_param=gender_param)
         array_index = 0
         territory_set = [territory_1, territory_2]
-        # territory_set = sorted(territory_set)
         for _ in range(len(pass_rate) // 2):
             if pass_rate[array_index] >= pass_rate[array_index + 1]:
                 better = territory_set[0]
