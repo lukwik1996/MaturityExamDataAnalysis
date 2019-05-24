@@ -7,6 +7,7 @@ class MaturityExamAnalysis:
     def __init__(self, url="https://www.dane.gov.pl/media/resources/20190513/Liczba_os%C3%B3b_kt%C3%B3re"
                            "_przystapi%C5%82y_lub_zda%C5%82y_egzamin_maturalny.csv"):
         self.data = urlopen(url)
+        self.gender_params = ["both", "mężczyźni", "kobiety"]
         self.territory = []         # territory
         self.status = []            # participated/passed
         self.gender = []            # gender
@@ -81,10 +82,12 @@ class MaturityExamAnalysis:
                         people_count += self.people[array_index]
                 else:
                     if self.status[array_index] == "przystąpiło" and self.territory[array_index] != "Polska" \
-                            and self.gender[index] == gender_param:
+                            and self.gender[array_index] == gender_param:
                         people_count += self.people[array_index]
         unique_territory = set(self.territory)
-        average_people_per_voivodeship.append(people_count // (len(unique_territory) - 1))
+        if "Polska" in unique_territory:
+            unique_territory.remove("Polska")
+        average_people_per_voivodeship.append(people_count // len(unique_territory))
         return average_people_per_voivodeship
 
     @staticmethod
@@ -135,7 +138,8 @@ class MaturityExamAnalysis:
     def get_pass_rate(self, *parameters, gender_param="both"):
         unique_year = sorted(set(self.year))
         unique_territory = sorted(set(self.territory))
-        unique_territory.remove("Polska")
+        if "Polska" in unique_territory:
+            unique_territory.remove("Polska")
 
         if not parameters:                                                                  # zad 4
             array_length = len(unique_territory) * len(unique_year)
@@ -184,29 +188,29 @@ class MaturityExamAnalysis:
     # Zadanie 1
     def average_number_of_people_per_voivodeship(self, year_param, gender_param="both"):
         result = []
-        if gender_param not in ["both", "mężczyźni", "kobiety"]:
+        if gender_param not in self.gender_params:
             print("Function wasn't called properly, the gender argument must be set to either 'mężczyzna', "
                   "'kobieta' or ''.")
             return result
         result.append(self.get_number_of_people(year_param=year_param, gender_param=gender_param))
-        return result
+        return result[0]
 
     # Zadanie 2
     def pass_rate_over_years(self, territory_param, gender_param="both"):
         result = []
-        if gender_param not in ["both", "mężczyźni", "kobiety"]:
+        if gender_param not in self.gender_params:
             print("Function wasn't called properly, the gender argument must be set to either 'mężczyzna', "
                   "'kobieta' or ''.")
             return result
         pass_rate, unique_year = self.get_pass_rate(territory_param, gender_param=gender_param)
         for array_index in range(len(unique_year)):
-            result.append(str(unique_year[array_index]) + " - " + str(round(pass_rate[array_index])))
+            result.append(str(unique_year[array_index]) + " - " + str(round(pass_rate[array_index])) + "%")
         return result
 
     # Zadanie 3
     def best_pass_rate(self, year_param, gender_param="both"):
         result = []
-        if gender_param not in ["both", "mężczyźni", "kobiety"]:
+        if gender_param not in self.gender_params:
             print("Function wasn't called properly, the gender argument must be set to either 'mężczyzna', "
                   "'kobieta' or ''.")
             return result
@@ -223,7 +227,7 @@ class MaturityExamAnalysis:
     # Zadanie 4
     def regression(self, gender_param="both"):
         result = []
-        if gender_param not in ["both", "mężczyźni", "kobiety"]:
+        if gender_param not in self.gender_params:
             print("Function wasn't called properly, the gender argument must be set to either 'mężczyzna', "
                   "'kobieta' or ''.")
             return result
@@ -240,7 +244,7 @@ class MaturityExamAnalysis:
     # Zadanie 5
     def compare_voivodeships(self, territory_1, territory_2, gender_param="both"):
         result = []
-        if gender_param not in ["both", "mężczyźni", "kobiety"]:
+        if gender_param not in self.gender_params:
             print("Function wasn't called properly, the gender argument must be set to either 'mężczyzna', "
                   "'kobieta' or ''.")
             return result

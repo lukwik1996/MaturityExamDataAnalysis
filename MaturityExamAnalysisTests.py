@@ -30,6 +30,22 @@ if __name__ == '__main__':
     assert mea.year[0] == 2018, print("Year[0] = " + str(mea.year[0]))
     assert mea.people[0] == 10000, print("People[0] = " + str(mea.people[0]))
 
+    test_result = mea.average_number_of_people_per_voivodeship(2018, gender_param="kobiety")
+    assert test_result[0] == 6100, print("Returned value: " + str(test_result[0]))
+
+    test_result = mea.pass_rate_over_years("Gdynia", "mężczyźni")
+    assert test_result[1] == "2019 - 93%", print(test_result[1])
+
+    test_result = mea.best_pass_rate(2018)
+    assert test_result[0] == "2018 - Gdańsk", print("Expected result: " + str(test_result[0]))
+
+    test_result = mea.regression()
+    assert len(test_result) == 0, print("Expected: " + test_result)
+
+    test_result = mea.compare_voivodeships("Gdańsk", "Gdynia")
+    assert test_result[0] == "2018 - Gdańsk" and test_result[1] == "2019 - Gdynia", \
+        print("Expected: '" + str(test_result[0]) + "' and '" + str(test_result[1])) + "'"
+
     array_1, array_2, array_3 = MaturityExamAnalysis.MaturityExamAnalysis.fill_arrays_with_0(10)
     assert len(array_1) == 10 and len(array_2) == 10 and len(array_3) == 10
 
