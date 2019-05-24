@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62e3491d-128e-4eb3-8aed-916c4730f88e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README_EN.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MaturityExamAnalysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaturityExamAnalysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MaturityExamAnalysisTests.py" beforeDir="false" afterPath="$PROJECT_DIR$/MaturityExamAnalysisTests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-    </list>
+    <list default="true" id="62e3491d-128e-4eb3-8aed-916c4730f88e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +16,7 @@
     <session id="-1316875020">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
@@ -49,13 +43,13 @@
           <entry key="Python Console" value="6" />
           <entry key="md" value="1642" />
           <entry key="py" value="8063" />
-          <entry key="txt" value="105" />
+          <entry key="txt" value="200" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="1642" />
-          <entry key="PLAIN_TEXT" value="105" />
+          <entry key="PLAIN_TEXT" value="200" />
           <entry key="Python" value="8069" />
         </counts>
       </usages-collector>
@@ -81,11 +75,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README_EN.md">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor>
-                <caret column="26" lean-forward="true" selection-start-column="26" selection-end-line="5" selection-end-column="74" />
+                <caret column="26" selection-start-column="26" selection-end-line="5" selection-end-column="74" />
               </first_editor>
               <second_editor />
             </state>
@@ -273,12 +267,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558657583808</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Filled Readme files, added some tests (still need some), script works properly.">
+      <created>1558718648958</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1558718648958</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49819493" visible="true" weight="0.26652452" />
       <window_info id="Structure" order="1" sideWeight="0.50180507" side_tool="true" weight="0.25586355" />
@@ -286,7 +286,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49413645" weight="0.18004338" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49626866" visible="true" weight="0.39804772" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49626866" weight="0.39804772" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -313,7 +313,8 @@
     <MESSAGE value="Almost completed, no tests yet." />
     <MESSAGE value="Almost completed, empty test script." />
     <MESSAGE value="Working script with a few tests added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Working script with a few tests added." />
+    <MESSAGE value="Filled Readme files, added some tests (still need some), script works properly." />
+    <option name="LAST_COMMIT_MESSAGE" value="Filled Readme files, added some tests (still need some), script works properly." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/codecs.py">
@@ -347,11 +348,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README_EN.md">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor>
-            <caret column="26" lean-forward="true" selection-start-column="26" selection-end-line="5" selection-end-column="74" />
+            <caret column="26" selection-start-column="26" selection-end-line="5" selection-end-column="74" />
           </first_editor>
           <second_editor />
         </state>
